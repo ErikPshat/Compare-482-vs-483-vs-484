@@ -1,0 +1,1303 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mg="http://www.araxis.com/2002/Merge/Reporting" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!--The layout and design of this report is Copyright © 2003-2018 Araxis Ltd. All rights reserved.-->
+<!--The copyright of the data content of this report belongs to the relevant copyright holders.-->
+<title>2. Araxis Merge File Comparison Report</title>
+<style type="text/css">
+body { background: #fff;  color: #000; margin: 0px 14px 14px 14px; }
+h1, h2, h3, h4, h5 {
+  padding: 0em;
+  margin: 1.5em 0em .25em 0em;
+  text-align: left;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
+  max-width: 55em;
+}
+body, h4, h5, p, ol, ul, li, td, th { font-family: Verdana, Arial, Helvetica, sans-serif; text-align: left; }
+
+h4, h5, p, ol, ul, li { font-size: 70%; }
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+}
+
+h1 { margin: 14px 0em 1.2em 0em; font-size: 112%; line-height: 130%;}
+h2 { font-size: 125%; line-height: 84%;}
+h3 { margin-top: 1.4em; font-size: 81%; }
+h4 { margin-top: 1em; font-size: 70%; }
+h5 { margin-top: 1em; font-size: 100%; font-style: italic;}
+h1 strong, h2 strong, h3 strong, h4 strong { font-weight: bold; }
+
+p { margin: 6px 0em 6px 0em; max-width: 55em;}
+p.code, code {}
+p { font-size: 70%; line-height: 125%; }
+table { font-size: 70%;}
+
+p.copyright, .small { font-size: 60%; line-height: 120%; }
+p.copyright { margin: 3px 0px 0px 0px; padding: 0px; text-align: left; }
+acronym { font-variant: small-caps; }
+div.pad { padding: 3px; }
+span.lineEndings { color: red; font-size: 70%; }
+
+table.mgRowGroup, table.mgRowGroupFolder { border: 1px solid #a0a0a0; margin: 10px 0px 10px 0px; width: 100%; table-layout: fixed; border-collapse: collapse; }
+table.mgRowGroup td { vertical-align: top; padding: 0; }
+table.mgRowGroupFolder td { vertical-align: top; padding: 1px 0 1px 0; }
+div.IP { width: 2px; height: 1em; float: left; }
+
+img.mgFldrIcon {float: left; text-align: left; margin: -1px 2px 0px 0px;  height: 16px; width: 16px; border: none; vertical-align: top; background-color: transparent;}
+div.mgFldrIcon {float: left; width: auto;}
+span.left {float: left;width: auto;}
+span.right {float: right;width: auto;}
+
+table.bordered { border-collapse: collapse; border: 1px solid #a0a0a0; margin: 10px 0px 10px 0px;}
+table.bordered th, table.bordered td { vertical-align: top; padding: 3px; border: 1px solid #a0a0a0;}
+table.bordered th { background-color: #e5e5e5; }
+table.bordered td.group { background-color: #f5f5f5; }
+span.disabledNavigation { color: #a0a0a0; }
+div.navigation { margin-top: 14px; font-size: 70%; }
+div.comment { font-weight: normal; color: #000; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #fcfed8; padding: 2px 5px 2px 5px; border: 1px solid #E3E5C3; margin: 1px 2px 3px 2px; -moz-border-radius: 7px; border-radius: 7px; }
+
+                span.U1, span.U1 a {float: left; width: auto;color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.U1 a {text-decoration: underline;}
+td.U1 {color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R1, span.R1 a {float: left; width: auto;color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R1 a {text-decoration: underline;}
+td.R1 {color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I1, span.I1 a {float: left; width: auto;color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I1 a {text-decoration: underline;}
+td.I1 {color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C1, span.C1 a {float: left; width: auto;color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C1 a {text-decoration: underline;}
+td.C1 {color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgC1 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.UU2, span.UU2 a {float: left; width: auto;color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UU2 a {text-decoration: underline;}
+td.UU2 {color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UR2, span.UR2 a {float: left; width: auto;color: #400000; background-color: #F9F2EB; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UR2 a {text-decoration: underline;}
+td.UR2 {color: #400000; background-color: #F9F2EB; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UI2, span.UI2 a {float: left; width: auto;color: #400000; background-color: #E8F3E7; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UI2 a {text-decoration: underline;}
+td.UI2 {color: #400000; background-color: #E8F3E7; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UC2, span.UC2 a {float: left; width: auto;color: #400000; background-color: #ECE6F2; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.UC2 a {text-decoration: underline;}
+td.UC2 {color: #400000; background-color: #ECE6F2; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgUC2 {color: #400000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.RU2, span.RU2 a {float: left; width: auto;color: #400000; background-color: #F9F2EB; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RU2 a {text-decoration: underline;}
+td.RU2 {color: #400000; background-color: #F9F2EB; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RR2, span.RR2 a {float: left; width: auto;color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RR2 a {text-decoration: underline;}
+td.RR2 {color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RI2, span.RI2 a {float: left; width: auto;color: #800000; background-color: #E2E7D3; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RI2 a {text-decoration: underline;}
+td.RI2 {color: #800000; background-color: #E2E7D3; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RC2, span.RC2 a {float: left; width: auto;color: #800000; background-color: #E6D9DF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.RC2 a {text-decoration: underline;}
+td.RC2 {color: #800000; background-color: #E6D9DF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgRC2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.IU2, span.IU2 a {float: left; width: auto;color: #400000; background-color: #E8F3E7; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.IU2 a {text-decoration: underline;}
+td.IU2 {color: #400000; background-color: #E8F3E7; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.IR2, span.IR2 a {float: left; width: auto;color: #800000; background-color: #E2E7D3; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.IR2 a {text-decoration: underline;}
+td.IR2 {color: #800000; background-color: #E2E7D3; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.II2, span.II2 a {float: left; width: auto;color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.II2 a {text-decoration: underline;}
+td.II2 {color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.IC2, span.IC2 a {float: left; width: auto;color: #800000; background-color: #D5DADA; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.IC2 a {text-decoration: underline;}
+td.IC2 {color: #800000; background-color: #D5DADA; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgIC2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.CU2, span.CU2 a {float: left; width: auto;color: #400000; background-color: #ECE6F2; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.CU2 a {text-decoration: underline;}
+td.CU2 {color: #400000; background-color: #ECE6F2; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgCU2 {color: #400000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.CR2, span.CR2 a {float: left; width: auto;color: #800000; background-color: #E6D9DF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.CR2 a {text-decoration: underline;}
+td.CR2 {color: #800000; background-color: #E6D9DF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgCR2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.CI2, span.CI2 a {float: left; width: auto;color: #800000; background-color: #D5DADA; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.CI2 a {text-decoration: underline;}
+td.CI2 {color: #800000; background-color: #D5DADA; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgCI2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.CC2, span.CC2 a {float: left; width: auto;color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.CC2 a {text-decoration: underline;}
+td.CC2 {color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgCC2 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+span.U3, span.U3 a {float: left; width: auto;color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.U3 a {text-decoration: underline;}
+td.U3 {color: #000000; background-color: #FFFFFF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R3, span.R3 a {float: left; width: auto;color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.R3 a {text-decoration: underline;}
+td.R3 {color: #800000; background-color: #F3E6D8; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I3, span.I3 a {float: left; width: auto;color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.I3 a {text-decoration: underline;}
+td.I3 {color: #800000; background-color: #D1E8CF; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C3, span.C3 a {float: left; width: auto;color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+span.C3 a {text-decoration: underline;}
+td.C3 {color: #800000; background-color: #DACDE6; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; }
+td.nbgC3 {color: #800000; font-family: "Consolas"; font-weight: normal; font-style: normal; font-size: 9pt; text-decoration: none; background-color: #FFFFFF; }
+
+span.selected {background-color: #3d80df; color: #fff;}
+span.selected a {background-color: #3d80df; color: #fff; text-decoration: underline;}
+span.symbol {cursor: pointer;}
+      </style>
+</head>
+<body>
+<h1><strong>2. Araxis Merge File Comparison Report</strong></h1>
+<p>Produced by <strong>Araxis Merge</strong> on <strong>14.02.2019 21:26:36</strong>. See <a href="https://www.araxis.com/" title="Link to the Araxis corporate web site">www.araxis.com</a> for information about Merge. This report uses XHTML and CSS2, and is best viewed with a modern standards-compliant browser. For optimum results when printing this report, use landscape orientation and enable printing of background images and colours in your browser.</p>
+<h3><strong>2.1&nbsp;Files compared</strong></h3>
+<table class="bordered">
+<tr>
+<th>#</th>
+<th>Location</th>
+<th>File</th>
+<th>Last Modified</th>
+</tr>
+<tr>
+<td>1</td>
+<td>C:\PS3\FirmwareExtractor\Firmware_4.82\Part5_dec\CORE_OS\lv0_files</td>
+<td>lv0_2.elf</td>
+<td>Thu Feb 14 16:03:34 2019 UTC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C:\PS3\FirmwareExtractor\Firmware_4.83\Part5_dec\CORE_OS\lv0_files</td>
+<td>lv0_2.elf</td>
+<td>Thu Feb 14 17:03:29 2019 UTC</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C:\PS3\FirmwareExtractor\Firmware_4.84\Part5_dec\CORE_OS\lv0_files</td>
+<td>lv0_2.elf</td>
+<td>Thu Feb 14 14:40:10 2019 UTC</td>
+</tr>
+<tr>
+<td colspan="4">
+<strong>Note:</strong> Merge considers the second file to be the common ancestor of the others.</td>
+</tr>
+</table>
+<h3><strong>2.2&nbsp;Comparison summary</strong></h3>
+<table class="bordered">
+<tr>
+<th rowspan="2" style="vertical-align: bottom;">Description</th>
+<th colspan="2">Between<br />Files 1 and 2</th>
+<th colspan="2">Between<br />Files 2 and 3</th>
+<th colspan="2">Relative to<br />Common Ancestor</th>
+</tr>
+<tr>
+<th style="text-align: right;">Text Blocks</th>
+<th style="text-align: right;">Lines</th>
+<th style="text-align: right;">Text Blocks</th>
+<th style="text-align: right;">Lines</th>
+<th style="text-align: right;">Text Blocks</th>
+<th style="text-align: right;">Lines</th>
+</tr>
+<tr>
+<td>Unchanged</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1526</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1526</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Changed</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Inserted</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>Removed</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td colspan="7">
+<strong>Note:</strong> An automatic merge would leave 1 conflict(s).</td>
+</tr>
+</table>
+<h3><strong>2.3&nbsp;Comparison options</strong></h3>
+<table class="bordered" style="width: 55em;">
+<tr>
+<th>Whitespace</th>
+<td>All differences in whitespace within lines are ignored<br /></td>
+</tr>
+<tr>
+<th>Character case</th>
+<td>Differences in character case are ignored</td>
+</tr>
+<tr>
+<th>Line endings</th>
+<td>Differences in line endings (<code>CR</code> and <code>LF</code> characters) are ignored</td>
+</tr>
+<tr>
+<th>CR/LF characters</th>
+<td>Shown in the comparison detail</td>
+</tr>
+<tr>
+<th>Active line-pairing rules</th>
+<td></td>
+</tr>
+</table>
+<h3><strong>2.4&nbsp;Active regular expressions</strong></h3>
+<p>No regular expressions were active.</p>
+<h3><strong>2.5&nbsp;Comparison detail</strong></h3>
+<table class="mgRowGroup">
+<col style="width: 5em;" />
+<col style="width: 1em;" />
+<col width="*" />
+<col style="width: 1em;" />
+<col style="width: 5em;" />
+<col style="width: 1em;" />
+<col width="*" />
+<col style="width: 1em;" />
+<col style="width: 5em;" />
+<col style="width: 1em;" />
+<col width="*" />
+<tr>
+<td class="U1 ln-no" style="text-align: right;">640</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">z\x0000В\x00056@\x0002…x\x0003</span>
+<span class="U1">\x0002Ќ&nbsp;\x0000\x0001<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">640</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">z\x0000В\x00056@\x0002…x\x0003</span>
+<span class="UU2">\x0002Ќ&nbsp;\x0000\x0001<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">640</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">z\x0000В\x00056@\x0002…x\x0003</span>
+<span class="U3">\x0002Ќ&nbsp;\x0000\x0001<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">641</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">!щ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5Ђ</span>
+<span class="U1">\x0000\x000EZ\x0000В\x00192Ђ\x0000<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">641</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">!щ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5Ђ</span>
+<span class="UU2">\x0000\x000EZ\x0000В\x00192Ђ\x0000<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">641</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">!щ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5Ђ</span>
+<span class="U3">\x0000\x000EZ\x0000В\x00192Ђ\x0000<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">642</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">Bя6@\x000C–H&amp;</span>
+<span class="U1">\x0002—T \x000B”T \x000B\x0015</span>
+<span class="U1">X\x0005\x0004\x000Cx\x0005<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">642</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">Bя6@\x000C–H&amp;</span>
+<span class="UU2">\x0002—T \x000B”T \x000B\x0015</span>
+<span class="UU2">X\x0005\x0004\x000Cx\x0005<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">642</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">Bя6@\x000C–H&amp;</span>
+<span class="U3">\x0002—T \x000B”T \x000B\x0015</span>
+<span class="U3">X\x0005\x0004\x000Cx\x0005<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">643</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">“|\x0000\x0006\x0007|\x0000&nbsp;‹\x0004</span>
+<span class="U1">\x0000E†Ђbѓ\x00075\x0000\x0000</span>
+<span class="U1">\x0000\x0012\x0000\x0007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;AЃЃ‚\x0004\x0000\x0001‡</span>
+<span class="U1">±!\x0002\x0002&nbsp;\x0000\x0015…\x0014\x0003</span>
+<span class="U1">Бѓ\x0004\x0000\x0003†\x0014ь\x0002‚</span>
+<span class="U1">\x0014\x0003В„&nbsp;\x0000\x0002ѓ2\x0000</span>
+<span class="U1">\x0003\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">\x001Cь\x0001\x0002\x001C\x0004\x0003\x0006!</span>
+<span class="U1">ю‚2\x0000\x000CЂ\x0018\x0001A€</span>
+<span class="U1">\x0012\x0000\x000F\x000C\x000C\x0004\x0001†4\x0000</span>
+<span class="U1">\x0003Љ@яя‹\\x0003Д\x0003</span>
+<span class="U1">;б…„!\x0000\x0003ѓ\x000C\x0000</span>
+<span class="U1">\x0004\x000C;Ј\x0005€\x0008"\x0002\x0006</span>
+<span class="U1">Ђў„†$\x0000\x0003…2\x0000</span>
+<span class="U1">&nbsp;&nbsp;\x0000Ѓb„„\x0008\x0001C</span>
+<span class="U1">\x0004\x0018\x0001ѓ†$\x0000\x0003‹2</span>
+<span class="U1">\x0000\x0002\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0002\x0004\x001C\x0004</span>
+<span class="U1">\x0003\x0006\\x0003В<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">643</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">“|\x0000\x0006\x0007|\x0000&nbsp;‹\x0004</span>
+<span class="UU2">\x0000E†Ђbѓ\x00075\x0000\x0000</span>
+<span class="UU2">\x0000\x0012\x0000\x0007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;AЃЃ‚\x0004\x0000\x0001‡</span>
+<span class="UU2">±!\x0002\x0002&nbsp;\x0000\x0015…\x0014\x0003</span>
+<span class="UU2">Бѓ\x0004\x0000\x0003†\x0014ь\x0002‚</span>
+<span class="UU2">\x0014\x0003В„&nbsp;\x0000\x0002ѓ2\x0000</span>
+<span class="UU2">\x0003\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">\x001Cь\x0001\x0002\x001C\x0004\x0003\x0006!</span>
+<span class="UU2">ю‚2\x0000\x000CЂ\x0018\x0001A€</span>
+<span class="UU2">\x0012\x0000\x000F\x000C\x000C\x0004\x0001†4\x0000</span>
+<span class="UU2">\x0003Љ@яя‹\\x0003Д\x0003</span>
+<span class="UU2">;б…„!\x0000\x0003ѓ\x000C\x0000</span>
+<span class="UU2">\x0004\x000C;Ј\x0005€\x0008"\x0002\x0006</span>
+<span class="UU2">Ђў„†$\x0000\x0003…2\x0000</span>
+<span class="UU2">&nbsp;&nbsp;\x0000Ѓb„„\x0008\x0001C</span>
+<span class="UU2">\x0004\x0018\x0001ѓ†$\x0000\x0003‹2</span>
+<span class="UU2">\x0000\x0002\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0002\x0004\x001C\x0004</span>
+<span class="UU2">\x0003\x0006\\x0003В<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">643</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">“|\x0000\x0006\x0007|\x0000&nbsp;‹\x0004</span>
+<span class="U3">\x0000E†Ђbѓ\x00075\x0000\x0000</span>
+<span class="U3">\x0000\x0012\x0000\x0007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;AЃЃ‚\x0004\x0000\x0001‡</span>
+<span class="U3">±!\x0002\x0002&nbsp;\x0000\x0015…\x0014\x0003</span>
+<span class="U3">Бѓ\x0004\x0000\x0003†\x0014ь\x0002‚</span>
+<span class="U3">\x0014\x0003В„&nbsp;\x0000\x0002ѓ2\x0000</span>
+<span class="U3">\x0003\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">\x001Cь\x0001\x0002\x001C\x0004\x0003\x0006!</span>
+<span class="U3">ю‚2\x0000\x000CЂ\x0018\x0001A€</span>
+<span class="U3">\x0012\x0000\x000F\x000C\x000C\x0004\x0001†4\x0000</span>
+<span class="U3">\x0003Љ@яя‹\\x0003Д\x0003</span>
+<span class="U3">;б…„!\x0000\x0003ѓ\x000C\x0000</span>
+<span class="U3">\x0004\x000C;Ј\x0005€\x0008"\x0002\x0006</span>
+<span class="U3">Ђў„†$\x0000\x0003…2\x0000</span>
+<span class="U3">&nbsp;&nbsp;\x0000Ѓb„„\x0008\x0001C</span>
+<span class="U3">\x0004\x0018\x0001ѓ†$\x0000\x0003‹2</span>
+<span class="U3">\x0000\x0002\x0000$\x0000\x0003&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0002\x0004\x001C\x0004</span>
+<span class="U3">\x0003\x0006\\x0003В<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">644</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">!ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">644</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">!ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">644</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">!ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">645</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">&nbsp;\x0000\x0003„4\x0000\x0003\x000E\x000C\x0000</span>
+<span class="U1">\x0002\x00112яяђ;¤H\x000F</span>
+<span class="U1">ЃЈ„Џ$\x0000\x0003<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">645</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">&nbsp;\x0000\x0003„4\x0000\x0003\x000E\x000C\x0000</span>
+<span class="UU2">\x0002\x00112яяђ;¤H\x000F</span>
+<span class="UU2">ЃЈ„Џ$\x0000\x0003<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">645</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">&nbsp;\x0000\x0003„4\x0000\x0003\x000E\x000C\x0000</span>
+<span class="U3">\x0002\x00112яяђ;¤H\x000F</span>
+<span class="U3">ЃЈ„Џ$\x0000\x0003<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">646</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x0004\x0000\x0003ѓ5\x0000\x0000\x0000\x0000&nbsp;</span>
+<span class="U1">\x0000\x0000\x0004\x0000\x0002‹\x0012\x0000\x0008&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;&nbsp;&nbsp;\x0004\x0000\x0001Џ?а</span>
+<span class="U1">\x0002<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">646</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x0004\x0000\x0003ѓ5\x0000\x0000\x0000\x0000&nbsp;</span>
+<span class="UU2">\x0000\x0000\x0004\x0000\x0002‹\x0012\x0000\x0008&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;&nbsp;&nbsp;\x0004\x0000\x0001Џ?а</span>
+<span class="UU2">\x0002<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">646</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x0004\x0000\x0003ѓ5\x0000\x0000\x0000\x0000&nbsp;</span>
+<span class="U3">\x0000\x0000\x0004\x0000\x0002‹\x0012\x0000\x0008&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;&nbsp;&nbsp;\x0004\x0000\x0001Џ?а</span>
+<span class="U3">\x0002<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">647</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">&nbsp;\x0000(…\x0014\x0003БЊ\x0014\x0003</span>
+<span class="U1">В\x0004?а\x0001†\x0004\x0000\x0006ѓ</span>
+<span class="U1">\x0008#\x0002\x0002&nbsp;\x0000\x0003‚2\x0000</span>
+<span class="U1">\x0008Ђ\x001Cь\x0005‹4\x0000\x0001„</span>
+<span class="U1">\x001C\x0004\x0001ѓ$\x0000\x0003\x0004\x001C\x0004</span>
+<span class="U1">\x0003\x0006\\x0003Е…!э\x0005</span>
+<span class="U1">&nbsp;\x0000!\x000B\x000C\x0000\x0005Њ4\x0000</span>
+<span class="U1">\x0001‡@яяЉ4\x0000\x0003&nbsp;</span>
+<span class="U1">;Ј\x0005\x0008ЂbC€$\x0000</span>
+<span class="U1">\x0003\x00032\x0000\x001D\x0000\x0008\x0001\x0006$</span>
+<span class="U1">\x0012\x0000\x0016#CГp&amp;4\x0000</span>
+<span class="U1">\x0006џ\x000Fa\x0012%4\x0000Fћ</span>
+<span class="U1">\x0018\x0001F\x001D2яяљL\x0000</span>
+<span class="U1">\x0012!4\x0000\x0007’\\x0003ОЈ</span>
+<span class="U1">8‰’ \x000C\x0000\x000Eў;©</span>
+<span class="U1">\x000F—\x000C\x0004\x0006<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">647</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">&nbsp;\x0000(…\x0014\x0003БЊ\x0014\x0003</span>
+<span class="UU2">В\x0004?а\x0001†\x0004\x0000\x0006ѓ</span>
+<span class="UU2">\x0008#\x0002\x0002&nbsp;\x0000\x0003‚2\x0000</span>
+<span class="UU2">\x0008Ђ\x001Cь\x0005‹4\x0000\x0001„</span>
+<span class="UU2">\x001C\x0004\x0001ѓ$\x0000\x0003\x0004\x001C\x0004</span>
+<span class="UU2">\x0003\x0006\\x0003Е…!э\x0005</span>
+<span class="UU2">&nbsp;\x0000!\x000B\x000C\x0000\x0005Њ4\x0000</span>
+<span class="UU2">\x0001‡@яяЉ4\x0000\x0003&nbsp;</span>
+<span class="UU2">;Ј\x0005\x0008ЂbC€$\x0000</span>
+<span class="UU2">\x0003\x00032\x0000\x001D\x0000\x0008\x0001\x0006$</span>
+<span class="UU2">\x0012\x0000\x0016#CГp&amp;4\x0000</span>
+<span class="UU2">\x0006џ\x000Fa\x0012%4\x0000Fћ</span>
+<span class="UU2">\x0018\x0001F\x001D2яяљL\x0000</span>
+<span class="UU2">\x0012!4\x0000\x0007’\\x0003ОЈ</span>
+<span class="UU2">8‰’ \x000C\x0000\x000Eў;©</span>
+<span class="UU2">\x000F—\x000C\x0004\x0006<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">647</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">&nbsp;\x0000(…\x0014\x0003БЊ\x0014\x0003</span>
+<span class="U3">В\x0004?а\x0001†\x0004\x0000\x0006ѓ</span>
+<span class="U3">\x0008#\x0002\x0002&nbsp;\x0000\x0003‚2\x0000</span>
+<span class="U3">\x0008Ђ\x001Cь\x0005‹4\x0000\x0001„</span>
+<span class="U3">\x001C\x0004\x0001ѓ$\x0000\x0003\x0004\x001C\x0004</span>
+<span class="U3">\x0003\x0006\\x0003Е…!э\x0005</span>
+<span class="U3">&nbsp;\x0000!\x000B\x000C\x0000\x0005Њ4\x0000</span>
+<span class="U3">\x0001‡@яяЉ4\x0000\x0003&nbsp;</span>
+<span class="U3">;Ј\x0005\x0008ЂbC€$\x0000</span>
+<span class="U3">\x0003\x00032\x0000\x001D\x0000\x0008\x0001\x0006$</span>
+<span class="U3">\x0012\x0000\x0016#CГp&amp;4\x0000</span>
+<span class="U3">\x0006џ\x000Fa\x0012%4\x0000Fћ</span>
+<span class="U3">\x0018\x0001F\x001D2яяљL\x0000</span>
+<span class="U3">\x0012!4\x0000\x0007’\\x0003ОЈ</span>
+<span class="U3">8‰’ \x000C\x0000\x000Eў;©</span>
+<span class="U3">\x000F—\x000C\x0004\x0006<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">648</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">;ЁЌ\x0019|\x0000\x0011њ;в</span>
+<span class="U1">Ќ\x0013|\x0000\x0010›6Ђ\x000E\x0014</span>
+<span class="U1">\\x0003О‘і\x0007Џ \x0008&amp;</span>
+<span class="U1">I•6Ђ<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">648</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">;ЁЌ\x0019|\x0000\x0011њ;в</span>
+<span class="UU2">Ќ\x0013|\x0000\x0010›6Ђ\x000E\x0014</span>
+<span class="UU2">\\x0003О‘і\x0007Џ \x0008&amp;</span>
+<span class="UU2">I•6Ђ<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">648</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">;ЁЌ\x0019|\x0000\x0011њ;в</span>
+<span class="U3">Ќ\x0013|\x0000\x0010›6Ђ\x000E\x0014</span>
+<span class="U3">\\x0003О‘і\x0007Џ \x0008&amp;</span>
+<span class="U3">I•6Ђ<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">649</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">–‚\x0005I”ЃЕМ\x0016Ђ</span>
+<span class="U1">Д‡\x0010$\x0000\x0007†&nbsp;\x0000\x000E</span>
+<span class="U1">‘\x0018\x0002†„CГp\x000B\x0014</span>
+<span class="U1">\x0003В'\x0008\x0001E\x0008\x000Fa\x0013</span>
+<span class="U1">Ќ\x0018\x0002‡‰8‚Ж‡2</span>
+<span class="U1">\x0000\x0004Ђ\x0012\x0000\x0000&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0004\x00084\x0000</span>
+<span class="U1">\x0002)\x001C\x0004\x0002\x00044\x0000\x0002*</span>
+<span class="U1">µ<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">649</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">–‚\x0005I”ЃЕМ\x0016Ђ</span>
+<span class="UU2">Д‡\x0010$\x0000\x0007†&nbsp;\x0000\x000E</span>
+<span class="UU2">‘\x0018\x0002†„CГp\x000B\x0014</span>
+<span class="UU2">\x0003В'\x0008\x0001E\x0008\x000Fa\x0013</span>
+<span class="UU2">Ќ\x0018\x0002‡‰8‚Ж‡2</span>
+<span class="UU2">\x0000\x0004Ђ\x0012\x0000\x0000&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0004\x00084\x0000</span>
+<span class="UU2">\x0002)\x001C\x0004\x0002\x00044\x0000\x0002*</span>
+<span class="UU2">µ<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">649</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">–‚\x0005I”ЃЕМ\x0016Ђ</span>
+<span class="U3">Д‡\x0010$\x0000\x0007†&nbsp;\x0000\x000E</span>
+<span class="U3">‘\x0018\x0002†„CГp\x000B\x0014</span>
+<span class="U3">\x0003В'\x0008\x0001E\x0008\x000Fa\x0013</span>
+<span class="U3">Ќ\x0018\x0002‡‰8‚Ж‡2</span>
+<span class="U3">\x0000\x0004Ђ\x0012\x0000\x0000&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;&nbsp;&nbsp;\x001Cь\x0004\x00084\x0000</span>
+<span class="U3">\x0002)\x001C\x0004\x0002\x00044\x0000\x0002*</span>
+<span class="U3">µ<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="C1 ln-no" style="text-align: right;">650</td>
+<td class="C1" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC1">
+<span class="U1">”‡$\x0000\x0004Ё\x001C\x0004\x0004‰</span>
+<span class="U1">\\x0003Д+!ы«&nbsp;\x0000</span>
+<span class="U1">\x0005\x0008\x000C\x0000\x000434\x0000B1</span>
+<span class="U1">@яяІ4\x0000\x000204\x0000</span>
+<span class="U1">\x0004Ї;¬Щ.µ¬X\x0007</span>
+<span class="U1">…‹Ц®$\x0000\x0004¬\x0004\x0000</span>
+<span class="U1">\x0007ѓ5\x0000\x0000\x0000\x0000&nbsp;\x0000\x0000</span>
+<span class="U1">\x0010p\x0000\x0000$\x0000\x0000\x0001\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0004\x0000</span>
+<span class="C1">‚</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0004\x0005\x0006\x0007ЂЂЂЂ</span>
+<span class="U1">\x000C</span>
+<span class="U1">
+<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="CC2 ln-no" style="text-align: right;">650</td>
+<td class="CC2" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgCC2">
+<span class="UU2">”‡$\x0000\x0004Ё\x001C\x0004\x0004‰</span>
+<span class="UU2">\\x0003Д+!ы«&nbsp;\x0000</span>
+<span class="UU2">\x0005\x0008\x000C\x0000\x000434\x0000B1</span>
+<span class="UU2">@яяІ4\x0000\x000204\x0000</span>
+<span class="UU2">\x0004Ї;¬Щ.µ¬X\x0007</span>
+<span class="UU2">…‹Ц®$\x0000\x0004¬\x0004\x0000</span>
+<span class="UU2">\x0007ѓ5\x0000\x0000\x0000\x0000&nbsp;\x0000\x0000</span>
+<span class="UU2">\x0010p\x0000\x0000$\x0000\x0000\x0001\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0004\x0000</span>
+<span class="CC2">ѓ</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0004\x0005\x0006\x0007ЂЂЂЂ</span>
+<span class="UU2">\x000C</span>
+<span class="UU2">
+<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="C3 ln-no" style="text-align: right;">650</td>
+<td class="C3" style="text-decoration: none;">&nbsp;</td>
+<td class="nbgC3">
+<span class="U3">”‡$\x0000\x0004Ё\x001C\x0004\x0004‰</span>
+<span class="U3">\\x0003Д+!ы«&nbsp;\x0000</span>
+<span class="U3">\x0005\x0008\x000C\x0000\x000434\x0000B1</span>
+<span class="U3">@яяІ4\x0000\x000204\x0000</span>
+<span class="U3">\x0004Ї;¬Щ.µ¬X\x0007</span>
+<span class="U3">…‹Ц®$\x0000\x0004¬\x0004\x0000</span>
+<span class="U3">\x0007ѓ5\x0000\x0000\x0000\x0000&nbsp;\x0000\x0000</span>
+<span class="U3">\x0010p\x0000\x0000$\x0000\x0000\x0001\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0004\x0000</span>
+<span class="C3">„</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0004\x0005\x0006\x0007ЂЂЂЂ</span>
+<span class="U3">\x000C</span>
+<span class="U3">
+<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">651</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x000E\x000FЂЂЂЂ\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0002Wя\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0012\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002cP</span>
+<span class="U1">\x0000\x0002c\x0008\x0000\x0002{Ш\x0000\x0002</span>
+<span class="U1">|\x0018\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002</span>
+<span class="U1">bШ\x0000\x0002bА\x0000\x0003MИ</span>
+<span class="U1">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000«К­\x0017qп«ь</span>
+<span class="U1">+’\x0012vъВ\x0013\x000C7¦</span>
+<span class="U1">ѕ?п‚Зџ;Ґs?</span>
+<span class="U1">ГZi\x000B\x0008іXщpъ</span>
+<span class="U1">\x0016ЈТяв)ћ„\x001Eд</span>
+<span class="U1">УЫ\x000E\x000C›®µ\x001BЗЯ</span>
+<span class="U1">с\x0004gG/…\x0000\x0000\x0000\x001B</span>
+<span class="U1">\x0001\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000Y0!E¬&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;±пжћ›z%я</span>
+<span class="U1">Џ†йцЃM7Ю&nbsp;M</span>
+<span class="U1">)r›„\x0016єнд"p</span>
+<span class="U1">e)ЊЫj›^Y</span>
+<span class="U1">д¤є/Ћjt\x000E\x001FБ</span>
+<span class="U1">гй5ЭТцlЮЭk</span>
+<span class="U1">\x0019PЖд—й"@\x0005</span>
+<span class="U1">†о3‹Aа\x001CђlZ</span>
+<span class="U1">mэuюµ$њъKм</span>
+<span class="U1">SO\¦yg<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">651</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x000E\x000FЂЂЂЂ\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0002Wя\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0012\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002cP</span>
+<span class="UU2">\x0000\x0002c\x0008\x0000\x0002{Ш\x0000\x0002</span>
+<span class="UU2">|\x0018\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002</span>
+<span class="UU2">bШ\x0000\x0002bА\x0000\x0003MИ</span>
+<span class="UU2">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000«К­\x0017qп«ь</span>
+<span class="UU2">+’\x0012vъВ\x0013\x000C7¦</span>
+<span class="UU2">ѕ?п‚Зџ;Ґs?</span>
+<span class="UU2">ГZi\x000B\x0008іXщpъ</span>
+<span class="UU2">\x0016ЈТяв)ћ„\x001Eд</span>
+<span class="UU2">УЫ\x000E\x000C›®µ\x001BЗЯ</span>
+<span class="UU2">с\x0004gG/…\x0000\x0000\x0000\x001B</span>
+<span class="UU2">\x0001\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000Y0!E¬&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;±пжћ›z%я</span>
+<span class="UU2">Џ†йцЃM7Ю&nbsp;M</span>
+<span class="UU2">)r›„\x0016єнд"p</span>
+<span class="UU2">e)ЊЫj›^Y</span>
+<span class="UU2">д¤є/Ћjt\x000E\x001FБ</span>
+<span class="UU2">гй5ЭТцlЮЭk</span>
+<span class="UU2">\x0019PЖд—й"@\x0005</span>
+<span class="UU2">†о3‹Aа\x001CђlZ</span>
+<span class="UU2">mэuюµ$њъKм</span>
+<span class="UU2">SO\¦yg<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">651</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x000E\x000FЂЂЂЂ\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0002Wя\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0012\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002cP</span>
+<span class="U3">\x0000\x0002c\x0008\x0000\x0002{Ш\x0000\x0002</span>
+<span class="U3">|\x0018\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0002</span>
+<span class="U3">bШ\x0000\x0002bА\x0000\x0003MИ</span>
+<span class="U3">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000«К­\x0017qп«ь</span>
+<span class="U3">+’\x0012vъВ\x0013\x000C7¦</span>
+<span class="U3">ѕ?п‚Зџ;Ґs?</span>
+<span class="U3">ГZi\x000B\x0008іXщpъ</span>
+<span class="U3">\x0016ЈТяв)ћ„\x001Eд</span>
+<span class="U3">УЫ\x000E\x000C›®µ\x001BЗЯ</span>
+<span class="U3">с\x0004gG/…\x0000\x0000\x0000\x001B</span>
+<span class="U3">\x0001\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000Y0!E¬&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;±пжћ›z%я</span>
+<span class="U3">Џ†йцЃM7Ю&nbsp;M</span>
+<span class="U3">)r›„\x0016єнд"p</span>
+<span class="U3">e)ЊЫj›^Y</span>
+<span class="U3">д¤є/Ћjt\x000E\x001FБ</span>
+<span class="U3">гй5ЭТцlЮЭk</span>
+<span class="U3">\x0019PЖд—й"@\x0005</span>
+<span class="U3">†о3‹Aа\x001CђlZ</span>
+<span class="U3">mэuюµ$њъKм</span>
+<span class="U3">SO\¦yg<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">652</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">E+*\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0002x\x0018\x0000\x0002wР\x0000\x0002{</span>
+<span class="U1">`\x0000\x0002{\x0018\x0000\x0002vИ\x0000</span>
+<span class="U1">\x0002vР\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0002w \x0000\x0002w€\x0000</span>
+<span class="U1">\x0003MИ\x0000\x0003MИ\x0000\x0002v</span>
+<span class="U1">И\x0000\x0002vР\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0002xА\x0000\x0002x</span>
+<span class="U1">x\x0000\x0002°\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0002xH\x0000</span>
+<span class="U1">\x0002x0\x0000\x0003MИ\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000Ґ</span>
+<span class="U1">TvЙжЯёђъЇ_</span>
+<span class="U1">їэ–\x001Bdќ<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">652</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">E+*\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0002x\x0018\x0000\x0002wР\x0000\x0002{</span>
+<span class="UU2">`\x0000\x0002{\x0018\x0000\x0002vИ\x0000</span>
+<span class="UU2">\x0002vР\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0002w \x0000\x0002w€\x0000</span>
+<span class="UU2">\x0003MИ\x0000\x0003MИ\x0000\x0002v</span>
+<span class="UU2">И\x0000\x0002vР\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0002xА\x0000\x0002x</span>
+<span class="UU2">x\x0000\x0002°\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0002xH\x0000</span>
+<span class="UU2">\x0002x0\x0000\x0003MИ\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000Ґ</span>
+<span class="UU2">TvЙжЯёђъЇ_</span>
+<span class="UU2">їэ–\x001Bdќ<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">652</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">E+*\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0002x\x0018\x0000\x0002wР\x0000\x0002{</span>
+<span class="U3">`\x0000\x0002{\x0018\x0000\x0002vИ\x0000</span>
+<span class="U3">\x0002vР\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0002w \x0000\x0002w€\x0000</span>
+<span class="U3">\x0003MИ\x0000\x0003MИ\x0000\x0002v</span>
+<span class="U3">И\x0000\x0002vР\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0002xА\x0000\x0002x</span>
+<span class="U3">x\x0000\x0002°\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0002xH\x0000</span>
+<span class="U3">\x0002x0\x0000\x0003MИ\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000Ґ</span>
+<span class="U3">TvЙжЯёђъЇ_</span>
+<span class="U3">їэ–\x001Bdќ<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">653</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">ї\x001D\x000CЧ`\x0000ЅK_Z</span>
+<span class="U1">ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">653</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">ї\x001D\x000CЧ`\x0000ЅK_Z</span>
+<span class="UU2">ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">653</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">ї\x001D\x000CЧ`\x0000ЅK_Z</span>
+<span class="U3">ю<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">654</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">ё}Оў!вRЈt\x0004</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x000Fр</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0001.ЧОЌ</span>
+<span class="U1">\x001DUEE…їj2ЃН</span>
+<span class="U1">\x0003Ї\x0000\x0000\x0000\x0000\x0000\x0000\x0001\x0010</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000яя</span>
+<span class="U1">яяяяя \x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0002€&nbsp;\x0000\x0002‡Ш</span>
+<span class="U1">\x0000\x0002¤Ё\x0000\x0002¤X\x0000\x0002</span>
+<span class="U1">vИ\x0000\x0002vРяяяя</span>
+<span class="U1">яяяа\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0002ё8\x0000\x0002ё&nbsp;\x0000\x0003</span>
+<span class="U1">MИ\x0000\x0003MИ\x0000\x0003MИ</span>
+<span class="U1">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0002k8\x0000\x0002№`</span>
+<span class="U1">\x0000\x0002ЅШ\x0000\x0002ј`\x0000\x0002</span>
+<span class="U1">»Ш\x0000\x0002»Ё\x0000\x0000\x0000\x0000</span>
+<span class="U1">\x0000\x0000\x0000\x0000\x0000\x0002k&nbsp;\x0000\x0002</span>
+<span class="U1">ї`\x0000\x0002їH\x0000\x0002їр</span>
+<span class="U1">\x0000\x0002їP\x0000\x0002їX\x0001\x0000</span>
+<span class="U1">\x0000\x0000\x0001\x0000\x0000\x0000\x0001\x0000\x0000\x0000</span>
+<span class="U1">\x0001\x0000\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000</span>
+<span class="U1">\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000\x0000\x0000</span>
+<span class="U1">\x0004\x0000\x0000\x0000\x0004\x0000\x0000\x0000\x0004\x0000</span>
+<span class="U1">\x0000\x0000\x0004\x0000\x0000\x0000\x0008\x0000\x0000\x0000</span>
+<span class="U1">\x0008\x0000\x0000\x0000\x0008\x0000\x0000\x0000\x0008\x0000</span>
+<span class="U1">\x0000\x0000\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000</span>
+<span class="U1">\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000&nbsp;\x0000</span>
+<span class="U1">\x0000\x0000&nbsp;\x0000\x0000\x0000&nbsp;\x0000\x0000\x0000</span>
+<span class="U1">&nbsp;\x0000\x0000\x0000@\x0000\x0000\x0000@\x0000</span>
+<span class="U1">\x0000\x0000@\x0000\x0000\x0000@\x0000\x0000\x0000</span>
+<span class="U1">Ђ\x0000\x0000\x0000Ђ\x0000\x0000\x0000Ђ\x0000</span>
+<span class="U1">\x0000\x0000Ђ\x0000\x0000\x0000\x001B\x0000\x0000\x0000</span>
+<span class="U1">\x001B\x0000\x0000\x0000\x001B\x0000\x0000\x0000\x001B\x0000</span>
+<span class="U1">\x0000\x00006\x0000\x0000\x00006\x0000\x0000\x0000</span>
+<span class="U1">6\x0000\x0000\x00006\x0000\x0000\x0000c|</span>
+<span class="U1">w{тkoЕ0\x0001g+</span>
+<span class="U1">юЧ«vК‚Й}ъY</span>
+<span class="U1">Gр­ФўЇњ¤rА</span>
+<span class="U1">·э“&amp;6?чМ4Ґ</span>
+<span class="U1">есqШ1\x0015\x0004З#Г</span>
+<span class="U1">\x0018–\x0005љ\x0007\x0012Ђвл'</span>
+<span class="U1">Іu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ѓ,</span>
+<span class="U1">\x001A\x001BnZ R;Ці)</span>
+<span class="U1">г/„SС\x0000н&nbsp;ь±</span>
+<span class="U1">[jЛѕ9JLXПР</span>
+<span class="U1">пЄыCM3…Eщ\x0002</span>
+<span class="U1">P&lt;џЁQЈ@Џ’</span>
+<span class="U1">ќ8хј¶Ъ!\x0010яу</span>
+<span class="U1">ТН\x000C\x0013м_—D\x0017Д</span>
+<span class="U1">§~=d]\x0019s`ЃO</span>
+<span class="U1">Ь"*ђ€Fоё\x0014Ю</span>
+<span class="U1">^\x000BЫа2:<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">654</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">ё}Оў!вRЈt\x0004</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x000Fр</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0001.ЧОЌ</span>
+<span class="UU2">\x001DUEE…їj2ЃН</span>
+<span class="UU2">\x0003Ї\x0000\x0000\x0000\x0000\x0000\x0000\x0001\x0010</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000яя</span>
+<span class="UU2">яяяяя \x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0002€&nbsp;\x0000\x0002‡Ш</span>
+<span class="UU2">\x0000\x0002¤Ё\x0000\x0002¤X\x0000\x0002</span>
+<span class="UU2">vИ\x0000\x0002vРяяяя</span>
+<span class="UU2">яяяа\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0002ё8\x0000\x0002ё&nbsp;\x0000\x0003</span>
+<span class="UU2">MИ\x0000\x0003MИ\x0000\x0003MИ</span>
+<span class="UU2">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0002k8\x0000\x0002№`</span>
+<span class="UU2">\x0000\x0002ЅШ\x0000\x0002ј`\x0000\x0002</span>
+<span class="UU2">»Ш\x0000\x0002»Ё\x0000\x0000\x0000\x0000</span>
+<span class="UU2">\x0000\x0000\x0000\x0000\x0000\x0002k&nbsp;\x0000\x0002</span>
+<span class="UU2">ї`\x0000\x0002їH\x0000\x0002їр</span>
+<span class="UU2">\x0000\x0002їP\x0000\x0002їX\x0001\x0000</span>
+<span class="UU2">\x0000\x0000\x0001\x0000\x0000\x0000\x0001\x0000\x0000\x0000</span>
+<span class="UU2">\x0001\x0000\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000</span>
+<span class="UU2">\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000\x0000\x0000</span>
+<span class="UU2">\x0004\x0000\x0000\x0000\x0004\x0000\x0000\x0000\x0004\x0000</span>
+<span class="UU2">\x0000\x0000\x0004\x0000\x0000\x0000\x0008\x0000\x0000\x0000</span>
+<span class="UU2">\x0008\x0000\x0000\x0000\x0008\x0000\x0000\x0000\x0008\x0000</span>
+<span class="UU2">\x0000\x0000\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000</span>
+<span class="UU2">\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000&nbsp;\x0000</span>
+<span class="UU2">\x0000\x0000&nbsp;\x0000\x0000\x0000&nbsp;\x0000\x0000\x0000</span>
+<span class="UU2">&nbsp;\x0000\x0000\x0000@\x0000\x0000\x0000@\x0000</span>
+<span class="UU2">\x0000\x0000@\x0000\x0000\x0000@\x0000\x0000\x0000</span>
+<span class="UU2">Ђ\x0000\x0000\x0000Ђ\x0000\x0000\x0000Ђ\x0000</span>
+<span class="UU2">\x0000\x0000Ђ\x0000\x0000\x0000\x001B\x0000\x0000\x0000</span>
+<span class="UU2">\x001B\x0000\x0000\x0000\x001B\x0000\x0000\x0000\x001B\x0000</span>
+<span class="UU2">\x0000\x00006\x0000\x0000\x00006\x0000\x0000\x0000</span>
+<span class="UU2">6\x0000\x0000\x00006\x0000\x0000\x0000c|</span>
+<span class="UU2">w{тkoЕ0\x0001g+</span>
+<span class="UU2">юЧ«vК‚Й}ъY</span>
+<span class="UU2">Gр­ФўЇњ¤rА</span>
+<span class="UU2">·э“&amp;6?чМ4Ґ</span>
+<span class="UU2">есqШ1\x0015\x0004З#Г</span>
+<span class="UU2">\x0018–\x0005љ\x0007\x0012Ђвл'</span>
+<span class="UU2">Іu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ѓ,</span>
+<span class="UU2">\x001A\x001BnZ R;Ці)</span>
+<span class="UU2">г/„SС\x0000н&nbsp;ь±</span>
+<span class="UU2">[jЛѕ9JLXПР</span>
+<span class="UU2">пЄыCM3…Eщ\x0002</span>
+<span class="UU2">P&lt;џЁQЈ@Џ’</span>
+<span class="UU2">ќ8хј¶Ъ!\x0010яу</span>
+<span class="UU2">ТН\x000C\x0013м_—D\x0017Д</span>
+<span class="UU2">§~=d]\x0019s`ЃO</span>
+<span class="UU2">Ь"*ђ€Fоё\x0014Ю</span>
+<span class="UU2">^\x000BЫа2:<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">654</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">ё}Оў!вRЈt\x0004</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x000Fр</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0001.ЧОЌ</span>
+<span class="U3">\x001DUEE…їj2ЃН</span>
+<span class="U3">\x0003Ї\x0000\x0000\x0000\x0000\x0000\x0000\x0001\x0010</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000яя</span>
+<span class="U3">яяяяя \x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0002€&nbsp;\x0000\x0002‡Ш</span>
+<span class="U3">\x0000\x0002¤Ё\x0000\x0002¤X\x0000\x0002</span>
+<span class="U3">vИ\x0000\x0002vРяяяя</span>
+<span class="U3">яяяа\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0002ё8\x0000\x0002ё&nbsp;\x0000\x0003</span>
+<span class="U3">MИ\x0000\x0003MИ\x0000\x0003MИ</span>
+<span class="U3">\x0000\x0003MИ\x0000\x0000\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0002k8\x0000\x0002№`</span>
+<span class="U3">\x0000\x0002ЅШ\x0000\x0002ј`\x0000\x0002</span>
+<span class="U3">»Ш\x0000\x0002»Ё\x0000\x0000\x0000\x0000</span>
+<span class="U3">\x0000\x0000\x0000\x0000\x0000\x0002k&nbsp;\x0000\x0002</span>
+<span class="U3">ї`\x0000\x0002їH\x0000\x0002їр</span>
+<span class="U3">\x0000\x0002їP\x0000\x0002їX\x0001\x0000</span>
+<span class="U3">\x0000\x0000\x0001\x0000\x0000\x0000\x0001\x0000\x0000\x0000</span>
+<span class="U3">\x0001\x0000\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000</span>
+<span class="U3">\x0000\x0000\x0002\x0000\x0000\x0000\x0002\x0000\x0000\x0000</span>
+<span class="U3">\x0004\x0000\x0000\x0000\x0004\x0000\x0000\x0000\x0004\x0000</span>
+<span class="U3">\x0000\x0000\x0004\x0000\x0000\x0000\x0008\x0000\x0000\x0000</span>
+<span class="U3">\x0008\x0000\x0000\x0000\x0008\x0000\x0000\x0000\x0008\x0000</span>
+<span class="U3">\x0000\x0000\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000</span>
+<span class="U3">\x0010\x0000\x0000\x0000\x0010\x0000\x0000\x0000&nbsp;\x0000</span>
+<span class="U3">\x0000\x0000&nbsp;\x0000\x0000\x0000&nbsp;\x0000\x0000\x0000</span>
+<span class="U3">&nbsp;\x0000\x0000\x0000@\x0000\x0000\x0000@\x0000</span>
+<span class="U3">\x0000\x0000@\x0000\x0000\x0000@\x0000\x0000\x0000</span>
+<span class="U3">Ђ\x0000\x0000\x0000Ђ\x0000\x0000\x0000Ђ\x0000</span>
+<span class="U3">\x0000\x0000Ђ\x0000\x0000\x0000\x001B\x0000\x0000\x0000</span>
+<span class="U3">\x001B\x0000\x0000\x0000\x001B\x0000\x0000\x0000\x001B\x0000</span>
+<span class="U3">\x0000\x00006\x0000\x0000\x00006\x0000\x0000\x0000</span>
+<span class="U3">6\x0000\x0000\x00006\x0000\x0000\x0000c|</span>
+<span class="U3">w{тkoЕ0\x0001g+</span>
+<span class="U3">юЧ«vК‚Й}ъY</span>
+<span class="U3">Gр­ФўЇњ¤rА</span>
+<span class="U3">·э“&amp;6?чМ4Ґ</span>
+<span class="U3">есqШ1\x0015\x0004З#Г</span>
+<span class="U3">\x0018–\x0005љ\x0007\x0012Ђвл'</span>
+<span class="U3">Іu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ѓ,</span>
+<span class="U3">\x001A\x001BnZ R;Ці)</span>
+<span class="U3">г/„SС\x0000н&nbsp;ь±</span>
+<span class="U3">[jЛѕ9JLXПР</span>
+<span class="U3">пЄыCM3…Eщ\x0002</span>
+<span class="U3">P&lt;џЁQЈ@Џ’</span>
+<span class="U3">ќ8хј¶Ъ!\x0010яу</span>
+<span class="U3">ТН\x000C\x0013м_—D\x0017Д</span>
+<span class="U3">§~=d]\x0019s`ЃO</span>
+<span class="U3">Ь"*ђ€Fоё\x0014Ю</span>
+<span class="U3">^\x000BЫа2:<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">655</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">I\x0006$\ВУ¬b‘•</span>
+<span class="U1">дyзИ7mЌХN©</span>
+<span class="U1">lVфкez®\x0008єx</span>
+<span class="U1">%.\x001C¦ґЖиЭt\x001F</span>
+<span class="U1">KЅ‹Љp&gt;µfH\x0003</span>
+<span class="U1">ц\x000Ea5W№†Б\x001Dћ</span>
+<span class="U1">бш\x0011iЩЋ”›\x001E</span>
+<span class="U1">‡йОU(ЯЊЎ‰<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">655</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">I\x0006$\ВУ¬b‘•</span>
+<span class="UU2">дyзИ7mЌХN©</span>
+<span class="UU2">lVфкez®\x0008єx</span>
+<span class="UU2">%.\x001C¦ґЖиЭt\x001F</span>
+<span class="UU2">KЅ‹Љp&gt;µfH\x0003</span>
+<span class="UU2">ц\x000Ea5W№†Б\x001Dћ</span>
+<span class="UU2">бш\x0011iЩЋ”›\x001E</span>
+<span class="UU2">‡йОU(ЯЊЎ‰<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">655</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">I\x0006$\ВУ¬b‘•</span>
+<span class="U3">дyзИ7mЌХN©</span>
+<span class="U3">lVфкez®\x0008єx</span>
+<span class="U3">%.\x001C¦ґЖиЭt\x001F</span>
+<span class="U3">KЅ‹Љp&gt;µfH\x0003</span>
+<span class="U3">ц\x000Ea5W№†Б\x001Dћ</span>
+<span class="U3">бш\x0011iЩЋ”›\x001E</span>
+<span class="U3">‡йОU(ЯЊЎ‰<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">656</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">їжBhA™-\x000F°T</span>
+<span class="U1">»\x0016ЂЂЂЂ\x0004\x0005\x0006\x0007</span>
+<span class="U1">\x0004\x0005\x0006\x0007\x0004\x0005\x0006\x0007ЂЂ</span>
+<span class="U1">ЂЂЂЂЂЂ\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">
+<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">656</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">їжBhA™-\x000F°T</span>
+<span class="UU2">»\x0016ЂЂЂЂ\x0004\x0005\x0006\x0007</span>
+<span class="UU2">\x0004\x0005\x0006\x0007\x0004\x0005\x0006\x0007ЂЂ</span>
+<span class="UU2">ЂЂЂЂЂЂ\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">
+<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">656</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">їжBhA™-\x000F°T</span>
+<span class="U3">»\x0016ЂЂЂЂ\x0004\x0005\x0006\x0007</span>
+<span class="U3">\x0004\x0005\x0006\x0007\x0004\x0005\x0006\x0007ЂЂ</span>
+<span class="U3">ЂЂЂЂЂЂ\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">
+<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">657</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x000B\x0008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">657</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x000B\x0008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">657</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x000B\x0008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">658</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x000B\x0010\x0011\x0012\x0013\x0010\x0011\x0012\x0013Ђ</span>
+<span class="U1">ЂЂЂЂЂЂЂ\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">658</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x000B\x0010\x0011\x0012\x0013\x0010\x0011\x0012\x0013Ђ</span>
+<span class="UU2">ЂЂЂЂЂЂЂ\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">658</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x000B\x0010\x0011\x0012\x0013\x0010\x0011\x0012\x0013Ђ</span>
+<span class="U3">ЂЂЂЂЂЂЂ\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">659</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x000E\x000F\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">659</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x000E\x000F\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">659</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x000E\x000F\x000C<span class="lineEndings"> CR</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="U1 ln-no" style="text-align: right;">660</td>
+<td class="U1" style="text-decoration: none;">&nbsp;</td>
+<td class="U1">
+<span class="U1">\x000E\x000FЂЂЂЂЂЂЂЂ</span>
+<span class="U1">\x0000\x0001\x0002\x0003\x0004\x0005\x0006\x0007\x0010\x0011</span>
+<span class="U1">\x0012\x0013\x0014\x0015\x0016\x0017\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="U1">&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="UU2 ln-no" style="text-align: right;">660</td>
+<td class="UU2" style="text-decoration: none;">&nbsp;</td>
+<td class="UU2">
+<span class="UU2">\x000E\x000FЂЂЂЂЂЂЂЂ</span>
+<span class="UU2">\x0000\x0001\x0002\x0003\x0004\x0005\x0006\x0007\x0010\x0011</span>
+<span class="UU2">\x0012\x0013\x0014\x0015\x0016\x0017\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="UU2">&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+<td>&nbsp;</td>
+<td class="U3 ln-no" style="text-align: right;">660</td>
+<td class="U3" style="text-decoration: none;">&nbsp;</td>
+<td class="U3">
+<span class="U3">\x000E\x000FЂЂЂЂЂЂЂЂ</span>
+<span class="U3">\x0000\x0001\x0002\x0003\x0004\x0005\x0006\x0007\x0010\x0011</span>
+<span class="U3">\x0012\x0013\x0014\x0015\x0016\x0017\x0008&nbsp;&nbsp;&nbsp;</span>
+<span class="U3">&nbsp;&nbsp;<span class="lineEndings"> LF</span>
+</span>
+</td>
+</tr>
+</table>
+<p class="copyright" style="margin-top: 25px; padding-top: 2px; border-top: solid #a0a0a0 1px; max-width: none;">Araxis Merge (but not the data content of this report) is Copyright  &copy; 1993–2018 Araxis Ltd (<a href="https://www.araxis.com/" title="Link to the Araxis corporate web site">www.araxis.com</a>). All rights reserved.</p>
+</body>
+</html>
